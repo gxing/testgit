@@ -1,5 +1,5 @@
 # .bash_profile
-
+# change the profile
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
