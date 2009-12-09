@@ -1,0 +1,55 @@
+# .bashrc
+
+# User specific aliases and functions
+emacs (){
+    if [ "$1" = "-nw" ] ; then
+	cp -f ~/.emacs.console ~/.emacs
+    else
+	cp -f ~/.emacs.x ~/.emacs
+    fi
+    /usr/bin/emacs $@
+}
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+if [ "${TERM}" == "xterm" ] ; then
+  alias mc='/usr/local/bin/mc'
+else
+  alias mc='/usr/local/bin/mc -a'
+fi
+
+alias vi='/usr/local/bin/vim -X'
+alias ls='ls --time-style=long-iso --color=tty '
+alias more='less -Keuc'
+alias gdb='gdb -q'
+alias gimp='LC_ALL=C LC_ALL=C /usr/bin/gimp'
+#set  bell-style none
+
+export PATH=$PATH:/linuette/gcc-3.4.2-glibc-2.3.3/bin:/root/work/player/src/sp1000/bin
+
+export VISUAL=vi
+# export JAVA_HOME=/root/jdk1.4
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+#export LC_ALL=zh_CN
+#export LANG=zh_CN
+#export LANGUAGE=zh_CN
+export LC_ALL=zh_CN.GB18030
+export LANG=zh_CN.GB18030
+export LANGUAGE=zh_CN.GB18030:zh_CN.GB2312:zh_CN
+alias man='NLSPATH=/usr/share/locale/en/man man'
+alias xytpos='cd /files/xyt'
+alias wrt='ssh -p 7022 192.168.16.1'
+alias rwd='/RWD6/shortcut_rwd'
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;36m'
+export LESS_TERMCAP_me=$'\E[0;32m'
+export LESS_TERMCAP_se=$'\E[0;36m'
+export LESS_TERMCAP_so=$'\E[01;44;32m'
+export LESS_TERMCAP_ue=$'\E[01;34m'
+export LESS_TERMCAP_us=$'\E[01;35m'
