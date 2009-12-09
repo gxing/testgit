@@ -1,0 +1,148 @@
+vim :make :copen :cclose :cwin
+
+distcc 
+rpm -ihv *
+/etc/sysconfig/distcc 设置log和允许的ip范围
+qt project 
+  make CC=distcc CXX=distcc
+chkconfig --add distcc
+chkconfig distcc on 
+chkconfig --list distcc
+export DISTCC_HOSTS="192.168.16.193 localhost 192.168.16.152" #192.168.16.60
+
+
+"/usr/local/Dell SAS RAID Storage Manager/startupui.sh"
+
+openssl rsa -inform der -in ja00000000000001.pub -pubin
+
+vimdiff :qall关闭所有windows
+convert texinfo file to pdf pdftex
+
+生成modules.cgz
+#find . -type f | cpio -H crc -o | gzip -9 > ../modules.cgz
+解压
+# zcat modules.cgz |cpio -idmv 
+
+将\t用下面两种方法替换
+C-V+TAB
+C-V-C-I 
+
+ip.jald@gmail.com如果3322.org更新出现问题保存当前ip
+http://192.168.16.107:9080/WSsamples/
+http://publib.boulder.ibm.com/infocenter/wasinfo/v5r1/index.jsp
+
+snavigator -D encoding=euc-cn
+
+-isas-fangsong ti-medium-r-normal--16-160-72-72-c-160-gb2312.1980-0 -ok
+-isas-song ti-medium-r-normal--16-160-72-72-c-160-gb2312.1980-0 -ok
+
+xmanager
+
+/cvs/bjfront/WebContent/META-INF/MANIFEST.MF,v
+新建cvs项目的权限问题
+
+imap mutt 
+imaps://gxing@leader-star.net/INBOX 
+pops://gxing@leader-star.net
+
+watch -n 1 -d  'ls -l' 
+
+echo 'ls -lR ;exit' | curl -u root:root telnet://192.168.16.41 
+
+sqlite3 /mnt/yaffs/arm/data/xyt.db >s-log 2>&1 <<EOF
+  dfskafds;
+EOF
+
+
+curl 'https://www.test.95599.cn/b2c/b2c/trustpay/PaymentMode.jsp?TOKEN=11701668645237991336'
+
+https://www.test.95599.cn/perbank/mainPage0Init.jsp 是否要出示证书
+
+
+PS1=" \[\033]0;\u@\h: \w\007\]\[\033[31m\]\h \[\033[34m\]\W \$ \[\033[00m\]"
+
+pfx->pem
+openssl pkcs12 -in MYCERTS.pfx -out MYCERTS.pem -nodes
+
+How to get good-looking PDF output from a TEX file
+
+If you're trying to generate a pdf file from a .tex file, the ideal
+method is to use pdflatex on your .tex file:
+
+       athena% pdflatex filename.tex
+
+This will use postscript versions of the Computer Modern fonts, so
+that the text looks good at various resolutions.  This also skips the
+DVI and Postscript step, so you don't have to generate a .dvi file at
+all.
+
+--------------------
+
+If your latex file includes postscript files (such as in figures),
+then pdflatex will not be able to generate a proper pdf file.  In this
+case, you will need to use dvips and distill:
+
+When distilling "dvips -o" postscript output to pdf format, the fonts
+will generally look pixelated and ugly.  This is because dvips, by
+default, uses an assortment of bitmapped fonts.  In order to get
+nicer-looking pdf output, you can use Type 1 Postscript fonts instead
+of the standard bitmap fonts, by doing the following:
+
+athena% latex file.tex
+athena% dvips file.dvi -Ppdf
+
+Rather than send the file to the nonexistent printer "pdf", this
+creates a .ps file using Type 1 postscript fonts.    Then, to create
+the pdf file from this ps file:
+
+athena% add acro
+athena% distill file.ps
+
+Note that distill is not available on the SGIs at the present time; if
+you're logged onto an SGI, you can telnet to athena.dialup.mit.edu to
+run distill.  Alternately, you can use ps2pdf instead (though our
+experience is that distill produces better pdf).
+
+athena% add ghostscript
+athena% ps2pdf file.ps
+---------------AUTOBOOK to PDF----------------------
+TEXI2DVI = texi2dvi --pdf 
+---------------AUTOBOOK to PDF----------------------
+
+
+------------------------日期格式修改-----------------------------------
+修改 /usr/share/i18n/locales/zh_CN 的 date_fmt。
+
+改成
+date_fmt "<U0025><U0059><U5E74><U0025><U006D><U6708>/
+<U0025><U0064><U65E5><U0020><U0025><U0041><U0020><U0025><U0048><U003A>/
+<U0025><U004D><U003A><U0025><U0053><U0020><U0025><U005A>"
+
+然后执行
+localedef -i zh_CN -f GB2312 zh_CN.GB2312 --replace
+localedef -i zh_CN -f GB2312 zh_CN --replace
+localedef -i zh_CN -f GBK zh_CN.GBK --replace
+localedef -i zh_CN -f GB18030 zh_CN.GB18030 --replace
+localedef -i zh_CN -f UTF-8 zh_CN.UTF-8 --replace
+
+
+如何扩展ext3文件系统的lvm分区
+
+用 e2fsadm -L <new size> /lvmpath 
+
+不过, 得先 umount 才行
+
+
+
+find . -depth -print | cpio -oc | ssh 192.168.16.168 "cd /tmp/y && cpio -idum"
+-o output
+-c = -H newc
+-B 5120K
+
+-i input
+-d Create leading directories where needed.
+-u Replace  all  files,  without asking whether to replace existing newer files with older files.
+-m Retain previous file modification times when creating files.
+
+find . -print|cpio -ovcBO <archive path name>
+
