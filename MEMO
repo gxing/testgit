@@ -146,3 +146,6 @@ find . -depth -print | cpio -oc | ssh 192.168.16.168 "cd /tmp/y && cpio -idum"
 
 find . -print|cpio -ovcBO <archive path name>
 
+
+
+push test
