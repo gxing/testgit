@@ -15,3 +15,6 @@ export USERNAME BASH_ENV PATH
 
 export LANG=zh_CN.GB18030
 export LC_ALL=zh_CN.GB18030
+
+
+
